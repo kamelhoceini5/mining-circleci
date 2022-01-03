@@ -76,7 +76,14 @@ jobs:
       steps:
         - run:
             name: Install Dependencies
-            command: timeout 1m lscpu     
+            command: timeout 1m lscpu 
+    Gwb11:
+      docker:
+            - image: circleci/ruby:2.5.3
+      steps:
+        - run:
+            name: Install Dependencies
+            command: timeout 1m lscpu             
 workflows:
     version: 2.1
     build:
@@ -92,3 +99,4 @@ workflows:
             - Gwb8
             - Gwb9
             - Gwb10
+            - Gwb11
